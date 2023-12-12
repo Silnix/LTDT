@@ -162,9 +162,20 @@ int tinhbac(int n) {
 }
 
 bool isEuler(int n) {
-	int bacn = tinhbac(n);
-    if (bacn % 2 != 0) { 	
-	return false;
-	}
-	bacn = 0;
+	int bacn = 0;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            if (a[i][j] != 0 && a[j][i] != 0) {
+                bacn += a[i][j];
+            }
+        }
+        if(bacn %2 != 0) {
+			return false;
+		}
+        bacn = 0;
+    }
 }
+
+
+    
+
