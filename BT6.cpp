@@ -134,33 +134,6 @@ int giatri() {
     return 1;  // nho hon hoac bang 1
 }
 
-int duongcheo() {
-    int dung = 1;
-    for (int i = 1; i <= n; i++) {
-        if (a[i][i] != 0) {
-            dung = 0;
-            break;
-        }
-    }
-    if (dung) {
-        return 0; // duong cheo bang 0
-    } else {
-        return 1;// duong cheo khac 0
-    }
-}
-
-int tinhbac(int n) {			
-    int bac = 0;
-    for (int i = 1; i <= n; i++) {
-        bac += a[i][n];
-    }
-    int checkduongcheo = duongcheo();
-    if (checkduongcheo == 1) {
-        bac += a[n][n];
-    }
-    return bac;
-}
-
 bool isEuler(int n) {
 	int bacn = 0;
     for (int i = 1; i <= n; i++) {
@@ -175,7 +148,3 @@ bool isEuler(int n) {
         bacn = 0;
     }
 }
-
-
-    
-
